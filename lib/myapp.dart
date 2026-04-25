@@ -5,7 +5,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) => GetMaterialApp.router(
+  Widget build(BuildContext context) => GetMaterialApp(
     enableLog: true,
     defaultTransition: Transition.noTransition,
     title: 'SONU SINGH PARIHAR',
@@ -14,12 +14,6 @@ class MyApp extends StatelessWidget {
     fallbackLocale: const Locale('en', 'EN'),
     debugShowCheckedModeBanner: false,
     getPages: AppRoutes.appRoutes,
-    routerDelegate: GetDelegate(),
-    routeInformationParser: GetInformationParser(
-      initialRoute: AppRoutes.splash,
-    ),
-
-    // optional but useful
-    backButtonDispatcher: RootBackButtonDispatcher(),
+    initialRoute: AppRoutes.splash,
   );
 }
