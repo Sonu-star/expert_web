@@ -95,43 +95,44 @@ class Top extends StatelessWidget {
           const SizedBox(height: 40),
 
           /// Buttons
-          Row(
+          Wrap(
+            spacing: 20,
+            runSpacing: 20,
             children: [
-              /// Primary Button
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFF59E0B),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 28,
-                    vertical: 18,
+              Container(
+                alignment: .center,
+                width: 230,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFF59E0B),
+                    padding: const EdgeInsets.symmetric(vertical: 18),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "Submit your enquiry",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: black,
-                        fontFamily: 'Regular',
+                  child: Row(
+                    mainAxisAlignment: .center,
+                    children: [
+                      Text(
+                        "Submit your enquiry",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: black,
+                          fontFamily: 'Regular',
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 8),
-                    const Icon(
-                      Icons.arrow_forward,
-                      size: 18,
-                      color: Colors.black,
-                    ),
-                  ],
+                      const SizedBox(width: 8),
+                      const Icon(
+                        Icons.arrow_forward,
+                        size: 18,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-
-              const SizedBox(width: 20),
 
               /// Secondary Button
               OutlinedButton(

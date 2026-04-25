@@ -1,12 +1,12 @@
 import 'package:expertgraphweb/global_export.dart';
 
 class HomeController extends GetxController {
-  GlobalKey homeKey = GlobalKey();
-  GlobalKey aboutKey = GlobalKey();
-  GlobalKey resumeKey = GlobalKey();
-  GlobalKey portfolioKey = GlobalKey();
-  GlobalKey certificateKey = GlobalKey();
-  GlobalKey contactKey = GlobalKey();
+  GlobalKey expertiseKey = GlobalKey();
+  GlobalKey howKey = GlobalKey();
+  GlobalKey trustKey = GlobalKey();
+  // GlobalKey portfolioKey = GlobalKey();
+  // GlobalKey certificateKey = GlobalKey();
+  // GlobalKey contactKey = GlobalKey();
   GlobalKey currentKey = GlobalKey();
 
   String selected = 'Flutter';

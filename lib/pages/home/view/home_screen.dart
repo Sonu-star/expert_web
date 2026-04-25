@@ -103,9 +103,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
                 SliverToBoxAdapter(child: Top()),
-                SliverToBoxAdapter(child: Expertise()),
-                SliverToBoxAdapter(child: HowWork()),
-                SliverToBoxAdapter(child: Trust()),
+                SliverToBoxAdapter(child: Expertise(key: c.expertiseKey)),
+                SliverToBoxAdapter(child: HowWork(key: c.howKey)),
+                SliverToBoxAdapter(child: Trust(key: c.trustKey)),
                 SliverToBoxAdapter(child: StopSearch()),
                 SliverToBoxAdapter(child: LovePage()),
               ],
