@@ -113,7 +113,7 @@ class StepItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(right: 24),
-      width: Get.width / 4.5,
+      width: Get.width / 5,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -42,4 +42,4 @@ jobs:
       - name: Deploy to Firebase
         run: firebase deploy --only hosting:expergraph
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIRE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
