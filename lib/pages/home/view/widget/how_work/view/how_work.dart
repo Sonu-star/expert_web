@@ -7,7 +7,6 @@ class HowWork extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Get.width,
-
       padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 60),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -19,7 +18,6 @@ class HowWork extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// Small Label
           Text(
             "HOW IT WORKS",
             style: TextStyle(
@@ -64,38 +62,32 @@ class HowWork extends StatelessWidget {
 
           /// Steps Row
           Wrap(
+            spacing: 20,
+            runSpacing: 20,
             children: const [
-              Expanded(
-                child: StepItem(
-                  number: "01",
-                  title: "Tell us your need",
-                  description:
-                      "Share your industry, the challenge, your budget and timing. Two minutes.",
-                ),
+              StepItem(
+                number: "01",
+                title: "Tell us your need",
+                description:
+                    "Share your industry, the challenge, your budget and timing. Two minutes.",
               ),
-              Expanded(
-                child: StepItem(
-                  number: "02",
-                  title: "We hand-match",
-                  description:
-                      "Our team picks the right specialist from our vetted network — not an algorithm.",
-                ),
+              StepItem(
+                number: "02",
+                title: "We hand-match",
+                description:
+                    "Our team picks the right specialist from our vetted network — not an algorithm.",
               ),
-              Expanded(
-                child: StepItem(
-                  number: "03",
-                  title: "Pay securely",
-                  description:
-                      "Once you approve the match, pay through our protected checkout. No retainers.",
-                ),
+              StepItem(
+                number: "03",
+                title: "Pay securely",
+                description:
+                    "Once you approve the match, pay through our protected checkout. No retainers.",
               ),
-              Expanded(
-                child: StepItem(
-                  number: "04",
-                  title: "Start solving",
-                  description:
-                      "We make the introduction within hours. You take it from there.",
-                ),
+              StepItem(
+                number: "04",
+                title: "Start solving",
+                description:
+                    "We make the introduction within hours. You take it from there.",
               ),
             ],
           ),
