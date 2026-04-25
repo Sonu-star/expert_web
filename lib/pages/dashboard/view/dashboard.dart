@@ -13,52 +13,47 @@ class DashboardScreen extends StatelessWidget {
           SliverToBoxAdapter(child: _hero()),
 
           SliverToBoxAdapter(
-            child: Flexible(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 60,
-                  vertical: 40,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    /// Title Row
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Enquiries",
-                              style: TextStyle(
-                                fontSize: 36,
-                                color: Colors.black,
-                                fontFamily: 'Bold',
-                              ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /// Title Row
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Enquiries",
+                            style: TextStyle(
+                              fontSize: 36,
+                              color: Colors.black,
+                              fontFamily: 'Bold',
                             ),
-                            const SizedBox(height: 6),
-                            Text(
-                              "Track every consultant request from match to connection.",
-                              style: TextStyle(
-                                fontFamily: 'Regular',
-                                fontSize: 14,
-                                color: Colors.grey.shade600,
-                              ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            "Track every consultant request from match to connection.",
+                            style: TextStyle(
+                              fontFamily: 'Regular',
+                              fontSize: 14,
+                              color: Colors.grey.shade600,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
+                      ),
 
-                        primaryButton("New enquiry"),
-                      ],
-                    ),
+                      primaryButton("New enquiry"),
+                    ],
+                  ),
 
-                    const SizedBox(height: 30),
+                  const SizedBox(height: 30),
 
-                    /// Enquiry Card
-                    _enquiryCard(),
-                  ],
-                ),
+                  /// Enquiry Card
+                  _enquiryCard(),
+                ],
               ),
             ),
           ),

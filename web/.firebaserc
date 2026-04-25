@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "library-c06d2": {
+      "hosting": {
+        "expergraph": [
+          "library-c06d2"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

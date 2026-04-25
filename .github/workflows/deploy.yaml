@@ -33,7 +33,13 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web
 
+      - name: clear
+        run: firebase target:clear hosting expergraph
+      
+      - name: apply target
+        run: firebase target:apply hosting expergraph expergraph
+
       - name: Deploy to Firebase
-        run: firebase deploy --only hosting
+        run: firebase deploy --only hosting:expergraph
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIRE_TOKEN }}

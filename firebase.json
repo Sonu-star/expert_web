@@ -1,1 +1,16 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"library-c06d2","appId":"1:749359220248:android:9ca7615250321242d2656d","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"library-c06d2","appId":"1:749359220248:ios:e355f8f84e533790d2656d","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"library-c06d2","configurations":{"android":"1:749359220248:android:9ca7615250321242d2656d","ios":"1:749359220248:ios:e355f8f84e533790d2656d","web":"1:749359220248:web:1d7db2950e80258ad2656d"}}}}}}
+{
+  "hosting": [
+    {
+      "target": "expergraph",
+      "public": "build/web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        { "source": "**", "destination": "/index.html" }
+      ]
+    }
+  ]
+}

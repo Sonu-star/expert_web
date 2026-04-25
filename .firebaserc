@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "n": "library-c06d2",
+    "default": "library-c06d2"
+  },
+  "targets": {
+    "library-c06d2": {
+      "hosting": {
+        "expergraph": [
+          "expergraph"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
