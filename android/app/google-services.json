@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "749359220248",
+    "firebase_url": "https://library-c06d2.firebaseio.com",
+    "project_id": "library-c06d2",
+    "storage_bucket": "library-c06d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749359220248:android:2296caf8552a36cfd2656d",
+        "android_client_info": {
+          "package_name": "com.example.bookdownloader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoNN9ooAWGNToERUpL8zQi-It5c_8H3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749359220248:android:23d64accb7b2334bd2656d",
+        "android_client_info": {
+          "package_name": "com.example.bookuploader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoNN9ooAWGNToERUpL8zQi-It5c_8H3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749359220248:android:7f80c455b2de116dd2656d",
+        "android_client_info": {
+          "package_name": "com.poster.grandposter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoNN9ooAWGNToERUpL8zQi-It5c_8H3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749359220248:android:079552d262371e9dd2656d",
+        "android_client_info": {
+          "package_name": "com.uploader.poster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoNN9ooAWGNToERUpL8zQi-It5c_8H3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749359220248:android:9ca7615250321242d2656d",
+        "android_client_info": {
+          "package_name": "com.web.expertgraphweb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoNN9ooAWGNToERUpL8zQi-It5c_8H3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
