@@ -45,48 +45,52 @@ class _HomeScreenState extends State<HomeScreen> {
                   shadowColor: tertiary.withAlpha(30),
                   scrolledUnderElevation: isDesktop ? 0 : 20,
                   titleSpacing: 0,
-                  actions: [
-                    GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.signin, arguments: 0),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
-                        ),
-                        child: Text(
-                          'Sign in',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Regular',
-                            fontWeight: FontWeight.w500,
+                  actions: isDesktop
+                      ? []
+                      : [
+                          GestureDetector(
+                            onTap: () =>
+                                Get.toNamed(AppRoutes.signin, arguments: 0),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 10,
+                              ),
+                              child: Text(
+                                'Sign in',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: 'Regular',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.signin, arguments: 1),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 17,
-                          vertical: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: secondary,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: grayLightest,
-                            fontSize: 14,
-                            fontFamily: 'Regular',
-                            fontWeight: FontWeight.w500,
+                          GestureDetector(
+                            onTap: () =>
+                                Get.toNamed(AppRoutes.signin, arguments: 1),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 17,
+                                vertical: 8,
+                              ),
+                              decoration: BoxDecoration(
+                                color: secondary,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                'Get Started',
+                                style: TextStyle(
+                                  color: grayLightest,
+                                  fontSize: 14,
+                                  fontFamily: 'Regular',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
-                    addHorizontalSpace(0.1),
-                  ],
+                          addHorizontalSpace(0.1),
+                        ],
                   leading: isDesktop
                       ? null
                       : Builder(

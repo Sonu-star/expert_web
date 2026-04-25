@@ -13,62 +13,10 @@ Drawer buildMobileDrawer() => Drawer(
     builder: (c) => SafeArea(
       child: Column(
         children: [
-          Row(
-            children: [
-              Container(
-                width: 80,
-                height: 80,
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: white,
-                  borderRadius: BorderRadius.circular(100),
-                  boxShadow: [
-                    BoxShadow(
-                      color: grayLightest,
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                      offset: Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.blueAccent.withAlpha(100),
-                      width: 3,
-                    ),
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child: Image.asset('', fit: BoxFit.cover),
-                  ),
-                ),
-              ),
-              addHorizontalSpace(0.1),
-              Column(
-                mainAxisAlignment: .start,
-                crossAxisAlignment: .start,
-                children: [
-                  Text(
-                    'SONU SINGH PARIHAR',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w800,
-                      color: black,
-                    ),
-                  ),
-                  Text(
-                    "Flutter Developer",
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: black,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 30),
+            alignment: Alignment.center,
+            child: Image.asset(Images.appLogo, width: 200),
           ),
           const Divider(color: gray, thickness: 5),
           DrawerItem(
