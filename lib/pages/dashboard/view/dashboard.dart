@@ -5,68 +5,78 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F3),
-      appBar: AppBar(title: navbar(), automaticallyImplyLeading: false),
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(child: _hero()),
+    return LayoutBuilder(
+      builder: (context, con) {
+        double wide = con.maxWidth;
+        return Scaffold(
+          backgroundColor: const Color(0xFFF5F5F3),
+          appBar: AppBar(title: navbar(), automaticallyImplyLeading: false),
+          body: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(child: _hero(wide)),
 
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  /// Title Row
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: wide / 25,
+                    vertical: 40,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      /// Title Row
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Enquiries",
-                            style: TextStyle(
-                              fontSize: 36,
-                              color: Colors.black,
-                              fontFamily: 'Bold',
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Enquiries",
+                                  style: TextStyle(
+                                    fontSize: 36,
+                                    color: Colors.black,
+                                    fontFamily: 'Bold',
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  "Track every consultant request from match to connection.",
+                                  style: TextStyle(
+                                    fontFamily: 'Regular',
+                                    fontSize: 14,
+                                    color: Colors.grey.shade600,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          const SizedBox(height: 6),
-                          Text(
-                            "Track every consultant request from match to connection.",
-                            style: TextStyle(
-                              fontFamily: 'Regular',
-                              fontSize: 14,
-                              color: Colors.grey.shade600,
-                            ),
-                          ),
+
+                          primaryButton("New enquiry", wide),
                         ],
                       ),
 
-                      primaryButton("New enquiry"),
+                      const SizedBox(height: 30),
+
+                      /// Enquiry Card
+                      _enquiryCard(),
                     ],
                   ),
-
-                  const SizedBox(height: 30),
-
-                  /// Enquiry Card
-                  _enquiryCard(),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
   /// ================= HERO =================
-  Widget _hero() {
+  Widget _hero(double wide) {
     return Container(
       width: Get.width,
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 80),
+      padding: EdgeInsets.symmetric(horizontal: wide / 25, vertical: 80),
       decoration: const BoxDecoration(
         gradient: LinearGradient(colors: [primary, secondary]),
       ),

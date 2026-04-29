@@ -5,86 +5,91 @@ class Trust extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: tertiary.withAlpha(20),
-      padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 50),
-      child: Column(
-        mainAxisAlignment: .center,
-        crossAxisAlignment: .start,
-        children: [
-          /// Small label
-          Text(
-            "TRUSTED BY BUILDERS",
-            style: TextStyle(
-              fontSize: 12,
-              letterSpacing: 1.5,
-              color: Colors.grey.shade600,
-              fontWeight: FontWeight.w600,
-              fontFamily: 'Regular',
-            ),
-          ),
-
-          const SizedBox(height: 16),
-
-          /// Heading
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "Real outcomes. ",
-                  style: TextStyle(
-                    fontSize: 48,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Bold',
-                  ),
-                ),
-                TextSpan(
-                  text: "Real fast.",
-                  style: TextStyle(
-                    fontSize: 48,
-                    color: Color(0xFFF59E0B),
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Bold',
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 36),
-
-          Wrap(
-            runSpacing: 40,
-            spacing: 40,
-            children: const [
-              Expanded(
-                child: TestimonialCard(
-                  text:
-                      "We needed a retail ops expert in 72 hours for a store launch. Klarity matched us with someone who'd already done it ten times.",
-                  name: "Anaya Verma",
-                  role: "Founder, Forma Studio",
+    return LayoutBuilder(
+      builder: (context, con) {
+        double wide = con.maxWidth;
+        return Container(
+          color: tertiary.withAlpha(20),
+          padding: EdgeInsets.symmetric(horizontal: wide / 25, vertical: 50),
+          child: Column(
+            mainAxisAlignment: .center,
+            crossAxisAlignment: .start,
+            children: [
+              /// Small label
+              Text(
+                "TRUSTED BY BUILDERS",
+                style: TextStyle(
+                  fontSize: 12,
+                  letterSpacing: 1.5,
+                  color: Colors.grey.shade600,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Regular',
                 ),
               ),
-              Expanded(
-                child: TestimonialCard(
-                  text:
-                      "Skipped weeks of recruiter calls. The branding consultant they paired us with reshaped our positioning end-to-end.",
-                  name: "Rohan Mehta",
-                  role: "CEO, Northwind",
+
+              const SizedBox(height: 16),
+
+              /// Heading
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Real outcomes. ",
+                      style: TextStyle(
+                        fontSize: 48,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Bold',
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Real fast.",
+                      style: TextStyle(
+                        fontSize: 48,
+                        color: Color(0xFFF59E0B),
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Bold',
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Expanded(
-                child: TestimonialCard(
-                  text:
-                      "I was hesitant about pay-per-match. Turned out to be the only model that made sense — no retainer, real expertise.",
-                  name: "Priya Shankar",
-                  role: "Director, Levant Realty",
-                ),
+              const SizedBox(height: 36),
+
+              Wrap(
+                runSpacing: 40,
+                spacing: 40,
+                children: const [
+                  Expanded(
+                    child: TestimonialCard(
+                      text:
+                          "We needed a retail ops expert in 72 hours for a store launch. Klarity matched us with someone who'd already done it ten times.",
+                      name: "Anaya Verma",
+                      role: "Founder, Forma Studio",
+                    ),
+                  ),
+                  Expanded(
+                    child: TestimonialCard(
+                      text:
+                          "Skipped weeks of recruiter calls. The branding consultant they paired us with reshaped our positioning end-to-end.",
+                      name: "Rohan Mehta",
+                      role: "CEO, Northwind",
+                    ),
+                  ),
+                  Expanded(
+                    child: TestimonialCard(
+                      text:
+                          "I was hesitant about pay-per-match. Turned out to be the only model that made sense — no retainer, real expertise.",
+                      name: "Priya Shankar",
+                      role: "Director, Levant Realty",
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

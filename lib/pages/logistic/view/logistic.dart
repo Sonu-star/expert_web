@@ -48,142 +48,148 @@ class _LogisticsScreenState extends State<LogisticsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F3),
-      appBar: AppBar(title: navbar()),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 40),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Row(
-                children: [
-                  _bar(true),
-                  const SizedBox(width: 10),
-                  _bar(true),
-                  const SizedBox(width: 10),
-                  _bar(true),
-                ],
-              ),
+      body: LayoutBuilder(
+        builder: (context, con) {
+          double wide = con.maxWidth;
+          return Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: wide > 700 ? wide / 5 : 20,
+              vertical: 40,
             ),
-            SliverToBoxAdapter(child: const SizedBox(height: 40)),
-            SliverToBoxAdapter(
-              child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Last bit. ",
-                      style: TextStyle(
-                        fontSize: 48,
-                        fontFamily: 'Bold',
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "Logistics.",
-                      style: TextStyle(
-                        fontSize: 48,
-                        fontFamily: 'Bold',
-                        color: Color(0xFFF59E0B),
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Row(
+                    children: [
+                      _bar(true),
+                      const SizedBox(width: 10),
+                      _bar(true),
+                      const SizedBox(width: 10),
+                      _bar(true),
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            SliverToBoxAdapter(child: const SizedBox(height: 10)),
-            SliverToBoxAdapter(
-              child: Text(
-                "Helps us pick someone available and within your range.",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Regular',
-                  color: Colors.grey.shade600,
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(child: const SizedBox(height: 40)),
-            SliverToBoxAdapter(
-              child: Container(
-                padding: const EdgeInsets.all(30),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.grey.shade300),
-                ),
-                child: Column(
-                  children: [
-                    _dropdownField(
-                      "Budget range",
-                      budget!,
-                      budgetOptions,
-                      (val) => setState(() => budget = val),
-                    ),
-                    const SizedBox(height: 20),
-                    _dropdownField(
-                      "How urgent?",
-                      urgency!,
-                      urgencyOptions,
-                      (val) => setState(() => urgency = val),
-                    ),
-                    const SizedBox(height: 20),
-                    _dropdownField(
-                      "Preferred call timing",
-                      timing!,
-                      timingOptions,
-                      (val) => setState(() => timing = val),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(child: const SizedBox(height: 40)),
-
-            SliverToBoxAdapter(
-              child: GestureDetector(
-                onTap: () => Get.back(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Back",
-                      style: TextStyle(fontSize: 16, fontFamily: 'Regular'),
-                    ),
-
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed(AppRoutes.detail);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFF59E0B),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 30,
-                          vertical: 18,
+                SliverToBoxAdapter(child: const SizedBox(height: 40)),
+                SliverToBoxAdapter(
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Last bit. ",
+                          style: TextStyle(
+                            fontSize: 48,
+                            fontFamily: 'Bold',
+                            color: Colors.black,
+                          ),
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                        TextSpan(
+                          text: "Logistics.",
+                          style: TextStyle(
+                            fontSize: 48,
+                            fontFamily: 'Bold',
+                            color: Color(0xFFF59E0B),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Submit enquiry",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                              fontFamily: 'Regular',
+                      ],
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(child: const SizedBox(height: 10)),
+                SliverToBoxAdapter(
+                  child: Text(
+                    "Helps us pick someone available and within your range.",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Regular',
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(child: const SizedBox(height: 40)),
+                SliverToBoxAdapter(
+                  child: Container(
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.grey.shade300),
+                    ),
+                    child: Column(
+                      children: [
+                        _dropdownField(
+                          "Budget range",
+                          budget!,
+                          budgetOptions,
+                          (val) => setState(() => budget = val),
+                        ),
+                        const SizedBox(height: 20),
+                        _dropdownField(
+                          "How urgent?",
+                          urgency!,
+                          urgencyOptions,
+                          (val) => setState(() => urgency = val),
+                        ),
+                        const SizedBox(height: 20),
+                        _dropdownField(
+                          "Preferred call timing",
+                          timing!,
+                          timingOptions,
+                          (val) => setState(() => timing = val),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(child: const SizedBox(height: 40)),
+                SliverToBoxAdapter(
+                  child: GestureDetector(
+                    onTap: () => Get.back(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Back",
+                          style: TextStyle(fontSize: 16, fontFamily: 'Regular'),
+                        ),
+
+                        ElevatedButton(
+                          onPressed: () {
+                            Get.toNamed(AppRoutes.detail);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFF59E0B),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30,
+                              vertical: 18,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          const SizedBox(width: 8),
-                          const Icon(Icons.check, color: Colors.black),
-                        ],
-                      ),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Submit enquiry",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                  fontFamily: 'Regular',
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              const Icon(Icons.check, color: Colors.black),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

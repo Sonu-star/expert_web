@@ -5,6 +5,7 @@ import 'package:expertgraphweb/pages/enquiry/view/enquiry.dart';
 import 'package:expertgraphweb/pages/home/controller/home_controller.dart';
 import 'package:expertgraphweb/pages/home/view/home_screen.dart';
 import 'package:expertgraphweb/pages/logistic/view/logistic.dart';
+import 'package:expertgraphweb/pages/profile/view/profile.dart';
 import 'package:expertgraphweb/pages/service/view/service.dart';
 import 'package:expertgraphweb/pages/signin/Controller/signin_controller.dart';
 import 'package:expertgraphweb/pages/signin/view/signin.dart';
@@ -28,6 +29,7 @@ class AppRoutes {
   static const String enquiry = '/enquiry';
   static const String logistic = '/logistic';
   static const String detail = '/detail';
+  static const String profile = '/profile';
   // static const String about = '/about';
   // static const String wallet = '/wallet';
   // static const String privacy = '/privacy';
@@ -85,6 +87,11 @@ class AppRoutes {
       name: detail,
       // binding: BindingsBuilder(() => Get.lazyPut(() => ProfileController())),
       page: () => const EnquiryDetailsScreen(),
+    ),
+    GetPage(
+      name: profile,
+      // binding: BindingsBuilder(() => Get.lazyPut(() => ProfileController())),
+      page: () => const ProfileScreen(),
     ),
     // GetPage(
     //     name: dashboard,

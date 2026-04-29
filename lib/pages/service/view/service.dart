@@ -124,23 +124,24 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
 
                 SliverToBoxAdapter(child: const SizedBox(height: 16)),
 
-                // /// Categories Grid
-                SliverToBoxAdapter(
-                  child: Wrap(
-                    spacing: 16,
-                    runSpacing: 16,
-                    children: categories.map((e) {
+                SliverPadding(
+                  padding: const EdgeInsets.all(16),
+                  sliver: SliverGrid(
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 220,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16,
+                      childAspectRatio: 4,
+                    ),
+                    delegate: SliverChildBuilderDelegate((context, index) {
+                      final e = categories[index];
                       final isSelected = selectedCategory == e;
+
                       return GestureDetector(
                         onTap: () => setState(() => selectedCategory = e),
                         child: AnimatedContainer(
-                          width: 230,
-                          alignment: Alignment.center,
                           duration: const Duration(milliseconds: 200),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 24,
-                            vertical: 14,
-                          ),
+                          alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? const Color(0xFFEDE7DC)
@@ -150,24 +151,14 @@ class _ServiceFormScreenState extends State<ServiceFormScreen> {
                               color: isSelected
                                   ? const Color(0xFFF59E0B)
                                   : Colors.grey.shade300,
-                              width: 1.5,
                             ),
                           ),
-                          child: Text(
-                            e,
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'Regular',
-                              color: Colors.black87,
-                            ),
-                          ),
+                          child: Text(e),
                         ),
                       );
-                    }).toList(),
+                    }, childCount: categories.length),
                   ),
                 ),
-
-                SliverToBoxAdapter(child: const SizedBox(height: 30)),
 
                 // /// Headline
                 SliverToBoxAdapter(
