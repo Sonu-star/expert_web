@@ -46,7 +46,7 @@ class StopSearch extends StatelessWidget {
 
           addVerticalSpace(0.3),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Get.toNamed(AppRoutes.signin, arguments: 0),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF59E0B),
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),

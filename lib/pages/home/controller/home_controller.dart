@@ -4,39 +4,14 @@ class HomeController extends GetxController {
   GlobalKey expertiseKey = GlobalKey();
   GlobalKey howKey = GlobalKey();
   GlobalKey trustKey = GlobalKey();
-  // GlobalKey portfolioKey = GlobalKey();
-  // GlobalKey certificateKey = GlobalKey();
-  // GlobalKey contactKey = GlobalKey();
   GlobalKey currentKey = GlobalKey();
-
-  String selected = 'Flutter';
 
   ScrollController scrollController = ScrollController();
 
-  bool showText = false;
-
-  @override
-  void onInit() {
-    getSize();
-    super.onInit();
-  }
-
-  void getSize() {
-    scrollController.addListener(() {
-      double height = Get.height / 1.4;
-      if (scrollController.offset > height && !showText) {
-        showText = true;
-      } else if (scrollController.offset < height && showText) {
-        showText = false;
-      }
-      update();
-    });
-  }
-
-  void selector(String value) {
-    selected = value;
-    update();
-  }
+  // @override
+  // void onInit() {
+  //   super.onInit();
+  // }
 
   void scrollToSection(GlobalKey key) {
     currentKey = key;
@@ -48,5 +23,6 @@ class HomeController extends GetxController {
         curve: Curves.easeInOut,
       );
     }
+    update();
   }
 }

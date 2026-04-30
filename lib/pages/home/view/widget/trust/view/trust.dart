@@ -108,70 +108,79 @@ class TestimonialCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      width: Get.width / 3.5,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.shade300),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// Stars
-          Row(
-            children: List.generate(
-              5,
-              (index) => const Padding(
-                padding: EdgeInsets.only(right: 4),
-                child: Icon(Icons.star, size: 16, color: Color(0xFFF59E0B)),
+    return LayoutBuilder(
+      builder: (context, con) {
+        double wide = con.maxWidth;
+        return Container(
+          padding: const EdgeInsets.all(24),
+          width: wide > 1200
+              ? wide / 3.2
+              : wide > 600
+              ? wide / 2.2
+              : wide / 1.1,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Colors.grey.shade300),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /// Stars
+              Row(
+                children: List.generate(
+                  5,
+                  (index) => const Padding(
+                    padding: EdgeInsets.only(right: 4),
+                    child: Icon(Icons.star, size: 16, color: Color(0xFFF59E0B)),
+                  ),
+                ),
               ),
-            ),
+
+              const SizedBox(height: 16),
+
+              /// Quote
+              Text(
+                '"$text"',
+                style: TextStyle(
+                  fontSize: 18,
+                  height: 1.6,
+                  color: Colors.black87,
+                  fontFamily: 'Regular',
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              Divider(color: Colors.grey.shade300),
+
+              const SizedBox(height: 16),
+
+              /// Name
+              Text(
+                name,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Regular',
+                ),
+              ),
+
+              const SizedBox(height: 4),
+
+              /// Role
+              Text(
+                role,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey.shade600,
+                  fontFamily: 'Regular',
+                ),
+              ),
+            ],
           ),
-
-          const SizedBox(height: 16),
-
-          /// Quote
-          Text(
-            '"$text"',
-            style: TextStyle(
-              fontSize: 18,
-              height: 1.6,
-              color: Colors.black87,
-              fontFamily: 'Regular',
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          Divider(color: Colors.grey.shade300),
-
-          const SizedBox(height: 16),
-
-          /// Name
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              fontFamily: 'Regular',
-            ),
-          ),
-
-          const SizedBox(height: 4),
-
-          /// Role
-          Text(
-            role,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey.shade600,
-              fontFamily: 'Regular',
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

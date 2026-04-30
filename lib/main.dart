@@ -1,5 +1,4 @@
 // import 'package:google_adsense/google_adsense.dart';
-import 'dart:ui' as html;
 
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 

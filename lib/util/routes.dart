@@ -7,10 +7,12 @@ import 'package:expertgraphweb/pages/home/view/home_screen.dart';
 import 'package:expertgraphweb/pages/logistic/view/logistic.dart';
 import 'package:expertgraphweb/pages/profile/view/profile.dart';
 import 'package:expertgraphweb/pages/service/view/service.dart';
-import 'package:expertgraphweb/pages/signin/Controller/signin_controller.dart';
-import 'package:expertgraphweb/pages/signin/view/signin.dart';
+import 'package:expertgraphweb/pages/auth/controller/signin_controller.dart';
+import 'package:expertgraphweb/pages/auth/view/signin.dart';
 import 'package:expertgraphweb/pages/splash/controller/splash_controller.dart';
 import 'package:expertgraphweb/pages/splash/view/splash_screen.dart';
+import 'package:expertgraphweb/pages/auth/controller/verify_controller.dart';
+import 'package:expertgraphweb/pages/auth/view/verify.dart';
 
 class AppRoutes {
   static const String splash = '/splash';
@@ -18,6 +20,7 @@ class AppRoutes {
   static const String appLanguage = '/app_language';
   // static const String onboard = '/onboard';
   static const String generateOTP = '/generateOTP';
+  static const String verifyOtp = '/verifyOTP';
   // static const String verifyOTP = '/verify_email';
   // static const String settings = '/settings';
   // static const String profile = '/profile';
@@ -56,6 +59,11 @@ class AppRoutes {
       name: signin,
       binding: BindingsBuilder(() => Get.lazyPut(() => SigninController())),
       page: () => const SigninScreen(),
+    ),
+    GetPage(
+      name: verifyOtp,
+      binding: BindingsBuilder(() => Get.lazyPut(() => VerifyController())),
+      page: () => const VerifyScreen(),
     ),
     GetPage(
       name: dashboard,
