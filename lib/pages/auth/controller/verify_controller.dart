@@ -1,49 +1,17 @@
 import 'package:expertgraphweb/global_export.dart';
+import 'base_controller.dart';
 
-class VerifyController extends GetxController {
-  TextEditingController otp = TextEditingController();
-  Color buttonColor = gray;
-
-  // @override
-  // void onInit() {
-  //   int val = Get.arguments ?? 0;
-
-  //   update();
-  //   super.onInit();
-  // }
-
-  void generateOtp() {
-    if (otp.text.isEmpty) {
-      errorSnackBar("Email", "Emial field is empty");
-    }
-    // else if (otp.text.isEmpty) {
-    //   errorSnackBar("Password", "Password field is empty");
-    // }
-    else {
-      snackBar('SUCESS', 'Create account success fully');
-      Get.toNamed(AppRoutes.dashboard);
-    }
-
-    update();
-  }
-
-  void buttonColorChnager() {
-    if (otp.text.isEmpty && otp.text.isEmpty) {
-      buttonColor = gray;
-    } else {
-      buttonColor = tertiary;
-    }
-    update();
-  }
-
+class VerifyController extends BaseController {
   void verifyOtp() {
-    if (otp.text.isEmpty) {
-      errorSnackBar("Email", "Emial field is empty");
-    } else if (otp.text.isEmpty) {
-      errorSnackBar("Password", "Password field is empty");
-    } else {
-      snackBar('SUCESS', 'Login success fully');
-      Get.toNamed(AppRoutes.dashboard);
+    if (buttonColor != gray) {
+      if (otp.text.isEmpty) {
+        errorSnackBar("OTP", "OTP field is empty");
+      } else if (otp.text.length < 6) {
+        errorSnackBar("OTP", "OTP must be 6 digits");
+      } else {
+        snackBar('SUCESS', 'Login success fully');
+        Get.toNamed(AppRoutes.dashboard);
+      }
     }
     update();
   }

@@ -1,4 +1,5 @@
 import 'package:expertgraphweb/global_export.dart';
+import 'package:expertgraphweb/pages/dashboard/view/widget/primary_button.dart';
 
 Widget navbar() {
   return LayoutBuilder(
@@ -13,7 +14,7 @@ Widget navbar() {
             Image.asset(Images.appLogo, width: 150),
             Row(
               children: [
-                primaryButton("New enquiry", wide),
+                PrimaryButton(text: "New enquiry", wide: wide),
                 const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {
@@ -43,33 +44,3 @@ Widget navbar() {
 }
 
 /// ================= BUTTON =================
-Widget primaryButton(String text, double wide) {
-  return ElevatedButton(
-    onPressed: () {
-      Get.toNamed(AppRoutes.service);
-    },
-    style: ElevatedButton.styleFrom(
-      backgroundColor: const Color(0xFFF59E0B),
-      padding: EdgeInsets.symmetric(
-        horizontal: wide > 800 ? 15 : 5,
-        vertical: wide > 800 ? 13 : 5,
-      ),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-    ),
-    child: Row(
-      children: [
-        const Icon(Icons.add, size: 16, color: Colors.black),
-        SizedBox(width: wide > 800 ? 4 : 0),
-        Text(
-          text,
-          style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Regular',
-            fontSize: wide > 800 ? 14 : 10,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ],
-    ),
-  );
-}

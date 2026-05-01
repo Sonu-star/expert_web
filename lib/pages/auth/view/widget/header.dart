@@ -8,6 +8,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
+      textAlign: TextAlign.center,
       style: TextStyle(fontSize: 35, fontFamily: "Bold", color: Colors.white),
     );
   }

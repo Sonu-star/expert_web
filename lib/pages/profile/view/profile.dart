@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:expertgraphweb/global_export.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,7 +17,6 @@ class ProfileScreen extends StatelessWidget {
             ),
             child: ListView(
               children: [
-                /// Small label
                 Text(
                   "YOUR PROFILE",
                   style: TextStyle(
@@ -28,8 +27,7 @@ class ProfileScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-
-                const SizedBox(height: 10),
+                sliverHeight(10),
 
                 /// Heading
                 Text(
@@ -40,8 +38,7 @@ class ProfileScreen extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-
-                const SizedBox(height: 30),
+                sliverHeight(30),
 
                 /// Card
                 Container(
@@ -71,9 +68,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
 
-                const Spacer(),
+                sliverHeight(30),
 
-                /// Save Button
                 Align(
                   alignment: Alignment.centerRight,
                   child: ElevatedButton(
@@ -125,7 +121,6 @@ class ProfileField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        /// Label
         Text(
           label,
           style: TextStyle(
@@ -135,10 +130,7 @@ class ProfileField extends StatelessWidget {
             color: Colors.black87,
           ),
         ),
-
-        const SizedBox(height: 8),
-
-        /// Input
+        sliverHeight(8),
         TextField(
           enabled: enabled,
           controller: TextEditingController(text: hint),

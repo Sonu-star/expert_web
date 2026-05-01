@@ -1,9 +1,7 @@
 import 'package:expertgraphweb/global_export.dart';
+import 'package:expertgraphweb/pages/auth/controller/base_controller.dart';
 
-class SigninController extends GetxController {
-  TextEditingController mobile = TextEditingController();
-  Color buttonColor = gray;
-
+class SigninController extends BaseController {
   void generateOtp() {
     if (buttonColor != gray) {
       if (mobile.text.length < 10) {
@@ -16,30 +14,5 @@ class SigninController extends GetxController {
       }
     }
     update();
-  }
-
-  void buttonColorChnager() {
-    if (mobile.text.isEmpty) {
-      buttonColor = gray;
-    } else {
-      buttonColor = tertiary;
-    }
-    update();
-  }
-
-  String? validateMobile(String? value) {
-    if (value == null || value.isEmpty) {
-      return "Mobile number is required";
-    }
-
-    if (value.length < 10) {
-      return "Mobile number must be 10 digits";
-    }
-
-    if (!RegExp(r'^[6-9]\d{9}$').hasMatch(value)) {
-      return "Enter a valid mobile number";
-    }
-
-    return null;
   }
 }

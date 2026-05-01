@@ -1,8 +1,9 @@
 import 'package:expertgraphweb/global_export.dart';
 
-double width(BuildContext context) => MediaQuery.of(context).size.width;
+double width() => Get.width;
 
-double height(BuildContext context) => MediaQuery.of(context).size.height;
+double height() => Get.height;
+Widget sliverHeight(double h) => SizedBox(height: h);
 
 Widget addVerticalSpace(double height) => SizedBox(height: height * 100);
 

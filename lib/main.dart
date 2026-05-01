@@ -1,5 +1,4 @@
 // import 'package:google_adsense/google_adsense.dart';
-
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'global_export.dart';
@@ -13,9 +12,7 @@ void main() async {
       statusBarColor: blood,
     ),
   );
-
   // await adSense.initialize('pub-8345909084193608');
-
   await Firebase.initializeApp(
     options: FirebaseOptions(
       apiKey: "AIzaSyBI2zk-C4_2yxPnI34q4qdKqheHqEcn9sI",

@@ -12,7 +12,7 @@ class SplashController extends GetxController {
     // bool onBoard = await SessionManager.getOnbaord() ?? false;
 
     Future.delayed(const Duration(seconds: 0), () {
-      Get.toNamed(AppRoutes.home);
+      Get.toNamed(AppRoutes.dashboard);
 
       // if (token.isNotEmpty) {
       // Get.toNamed(AppRoutes.dashboard);

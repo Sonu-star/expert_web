@@ -37,13 +37,15 @@ class VerifyScreen extends GetView<VerifyController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _label("OTP"),
+                          LabelWidget(text: "OTP"),
                           const SizedBox(height: 15),
-                          _inputField(
-                            'Enter your 6 digit otp',
-                            6,
-                            controller.otp,
+                          InputField(
+                            controller: controller.otp,
+                            hint: 'Enter your 6 digit otp',
+                            length: 6,
+                            c: controller,
                           ),
+
                           const SizedBox(height: 50),
                           AuthButton(
                             buttonName: 'Verify OTP',
@@ -60,51 +62,6 @@ class VerifyScreen extends GetView<VerifyController> {
             ),
           );
         },
-      ),
-    );
-  }
-
-  /// Label widget
-  Widget _label(String text) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: 14,
-        fontFamily: "Regular",
-        color: Colors.white70,
-      ),
-    );
-  }
-
-  /// Input field
-  Widget _inputField(
-    String hint,
-    int length,
-    TextEditingController c, {
-    bool obscure = false,
-  }) {
-    return TextField(
-      controller: c,
-      obscureText: obscure,
-      maxLength: length,
-      keyboardType: TextInputType.phone,
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      style: const TextStyle(color: Colors.black),
-      onChanged: (value) => controller.buttonColorChnager(),
-      decoration: InputDecoration(
-        filled: true,
-        counterText: "",
-        fillColor: const Color(0xFFD1D5DB),
-        hintText: hint,
-        hintStyle: const TextStyle(color: Colors.black54),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide.none,
-        ),
       ),
     );
   }

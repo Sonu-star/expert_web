@@ -37,8 +37,7 @@ class SigninScreen extends GetView<SigninController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          /// Email
-                          _label("Mobile Number"),
+                          LabelWidget(text: "Mobile Number"),
                           const SizedBox(height: 15),
                           InputField(
                             controller: controller.mobile,
@@ -63,18 +62,6 @@ class SigninScreen extends GetView<SigninController> {
             ),
           );
         },
-      ),
-    );
-  }
-
-  /// Label widget
-  Widget _label(String text) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: 14,
-        fontFamily: "Regular",
-        color: Colors.white70,
       ),
     );
   }

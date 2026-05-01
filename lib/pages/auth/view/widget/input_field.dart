@@ -1,5 +1,5 @@
 import 'package:expertgraphweb/global_export.dart';
-import 'package:expertgraphweb/pages/auth/controller/signin_controller.dart';
+import 'package:expertgraphweb/pages/auth/controller/base_controller.dart';
 
 class InputField extends StatelessWidget {
   const InputField({
@@ -10,7 +10,7 @@ class InputField extends StatelessWidget {
     required this.hint,
   });
   final TextEditingController controller;
-  final SigninController c;
+  final BaseController c;
   final int length;
   final String hint;
 
@@ -20,11 +20,9 @@ class InputField extends StatelessWidget {
       controller: controller,
       maxLength: length,
       keyboardType: TextInputType.phone,
-      inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly, // 👈 only numbers
-      ],
+      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       style: const TextStyle(color: Colors.black),
-      onChanged: (value) => c.buttonColorChnager(),
+      onChanged: (value) => c.buttonColorChanger(),
       decoration: InputDecoration(
         filled: true,
         counterText: "",
